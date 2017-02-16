@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         MyAdapter adapter = new MyAdapter(this);
         listView.setAdapter(adapter);
         ArrayList<Movie> movies = new ArrayList<>();
-        movies.add(new Movie());
+        movies.add(new Movie("Some Title", "1994"));
+        movies.add(new Movie("Another Title", "1995"));
         adapter.setData(movies);
         swipeRefreshLayout.setOnRefreshListener(this);
     }
