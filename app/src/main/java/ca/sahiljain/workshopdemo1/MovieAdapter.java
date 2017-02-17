@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends BaseAdapter {
+class MovieAdapter extends BaseAdapter {
 
     private ArrayList<Movie> movies = new ArrayList<>();
     private Context context;
 
-    public MyAdapter(Context context) {
+    MovieAdapter(Context context) {
         this.context = context;
     }
 
@@ -33,7 +33,7 @@ public class MyAdapter extends BaseAdapter {
         return movies.get(position).hashCode();
     }
 
-    public void setData(ArrayList<Movie> movies) {
+    void setData(ArrayList<Movie> movies) {
         this.movies = movies;
         notifyDataSetChanged();
     }
@@ -45,7 +45,9 @@ public class MyAdapter extends BaseAdapter {
         }
 
         TextView titleView = (TextView) convertView.findViewById(R.id.text_title);
+        TextView yearView = (TextView) convertView.findViewById(R.id.text_year);
         titleView.setText(getItem(position).getTitle());
+        yearView.setText(getItem(position).getYear());
         return convertView;
     }
 }
